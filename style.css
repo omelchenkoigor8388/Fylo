@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root{
+    /*color*/
+    --blue-100: hsl(240, 75%, 98%);
+    --blue-200: hsl(238, 22%, 44%);
+    --blue-300: hsl(224, 93%, 58%);
+    --blue-400: hsl(243, 87%, 12%);
+
+    --cyan: hsl(170, 45%, 43%);
+
+    --gray-100: hsl(0, 0%, 75%);
+
+    /*typography*/
+    --family-header: 'Raleway', sans-serif;
+    --family-body: 'Open Sans', sans-serif;
+
+    --weight-400: 400;
+    --weight-700: 700;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: white;
+    max-width: 100vh;
+    width: 100%;
+}
+header{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.group{
+    display: flex;
+    align-items: center;
+}
+header ul{
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+    letter-spacing: 0.1em;
+
+    font-family: var(--family-header);
+    font-weight: var(--weight-400);
+}
+header ul li a:before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+header ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.menuToggle{
+
+    display: none;
+}
+@media(max-width: 800px){
+    header{
+        width: 100%;
+    }
+    .logo{
+        width: 100px;
+    }
+    .logo img{
+        width: 100%;
+    }
+    .menuToggle{
+        position: relative;
+        right: 30px;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(30px);
+        z-index: 10;
+    }
+    header .navigation{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 0;
+    }
+    header.open .navigation{
+        top: 80px;
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        height: calc(100vh - 80px);
+        padding: 40px;
+        scroll-behavior: none;
+    }
+    header.open .navigation li a{
+        font-size: 1.25em;
+    }
+}
