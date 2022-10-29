@@ -38,6 +38,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.03);
 }
 .group{
     display: flex;
@@ -157,8 +158,13 @@ form button{
     }
 }
 @media(max-width: 800px){
+    body.start{
+        overflow-y: hidden;
+    }
     header{
         width: 100%;
+        position: fixed;
+        z-index: 500;
     }
     .logo{
         width: 100px;
@@ -182,6 +188,7 @@ form button{
         left: 0;
     }
     header.open .navigation{
+        position: fixed;
         top: 80px;
         opacity: 1;
         visibility: visible;
@@ -192,8 +199,6 @@ form button{
         width: 100%;
         height: 100vh;
         padding: 40px;
-        scroll-behavior: none;
-        overflow-y: scroll;
         z-index: 999;
     }
     header.open .navigation li a{
