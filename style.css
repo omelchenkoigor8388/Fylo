@@ -272,10 +272,10 @@ footer{
         position: fixed;
         z-index: 500;
     }
-    .logo{
+    .logo__header{
         width: 100px;
     }
-    .logo img{
+    .logo__header img{
         width: 100%;
     }
     .menuToggle{
